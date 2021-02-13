@@ -8,6 +8,8 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
+    <!-- Auto Complete CSS -->
+    <link rel="stylesheet" href="./vendor/css/auto-complete.css">
 
     <!-- Bootstrap CSS -->
     <link
@@ -29,7 +31,7 @@
     <div class="container">
       <h4 class="mt-2 text-center">Search Image for create slider</h4>
       <form
-        autocomplete="off"
+        
         id="search-form"
         class="form-inline mt-3 d-flex justify-content-center"
       >
@@ -38,7 +40,8 @@
             type="text"
             class="form-control"
             id="search"
-            placeholder="nature"
+            name="search"
+            placeholder="Search.."
           />
         </div>
         <button type="submit" id="search-btn" class="btn btn-primary mb-2">
@@ -77,9 +80,10 @@
       </div>
     </div>
     <div class="loading d-none">
-      <img src="./Magnify-1s-197px.svg" alt="" />
+      <img src="vendor/img/Magnify-1s-197px.svg" alt="" />
     </div>
     <!-- Optional JavaScript -->
+    <script src="./vendor/js/auto-complete.min.js"></script>
     <script src="./app.js"></script>
   </body>
 </html>
