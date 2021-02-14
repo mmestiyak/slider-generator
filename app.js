@@ -49,7 +49,12 @@ const getImages = (query) => {
     .then((response) => response.json())
     .then((data) => {
       const images = data.hits.map((hit) => hit);
-      showImages(images);
+      if(images.length !== 0){
+        showImages(images);
+      }else {
+        alert('no image found with your search query!')
+        location.reload()
+      }
     })
     .catch((err) => console.log(err));
 };
