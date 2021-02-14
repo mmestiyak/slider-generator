@@ -36,13 +36,13 @@ const showImages = (images) => {
   function incrementCounter() {
     counter++;
     if (counter === len) {
-      loading(false);
+      loading();
     }
   }
 };
 
 const getImages = (query) => {
-  loading(true);
+  loading();
   fetch(
     `https://pixabay.com/api/?key=${KEY}&q=${query}&image_type=photo&pretty=true`
   )
@@ -147,14 +147,9 @@ sliderForm.addEventListener("submit", function (e) {
   createSlider();
 });
 
-function loading(loading) {
-  if (loading) {
-    loadingSpinner.classList.remove("d-none");
-    imagesArea.hidden = true;
-  } else {
-    loadingSpinner.classList.add("d-none");
-    imagesArea.hidden = false;
-  }
+function loading() {
+    loadingSpinner.classList.toggle("d-none");
+    imagesArea.hidden = !imagesArea.hidden;
 }
 
 // Auto Suggest Simmiliar Keywords when searching on searchbar
